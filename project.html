@@ -78,60 +78,100 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     footer span {
-    color: #60a5fa;
-  }
+      color: #60a5fa;
+    }
 
     @media (max-width: 900px) {
       .projects-layout {
         grid-template-columns: 1fr !important;
       }
     }
-     /* === Navbar === */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 60px;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
 
-  header h1 {
-    color: #60a5fa;
-    font-size: 22px;
-    font-weight: 600;
-  }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-  nav a {
-    margin-left: 25px;
-    color: #ddd;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
+    header h1 {
+      color: #60a5fa;
+      font-size: 22px;
+      font-weight: 600;
+    }
 
-  nav a:hover {
-    color: #fff;
-  }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        width: 150px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      header {
+        padding: 16px 20px;
+      }
+    }
   </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
- <header>
+
+  <header>
     <h1 class="text-violet-400 font-semibold text-lg">Tayyaba Zanib</h1>
-    <nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="mobileNav">
       <a href="index.html#home">Home</a>
       <a href="#">Projects</a>
       <a href="index.html#contact">Contact</a>
     </nav>
-  </header
- 
+  </header>
 
-  <!-- Main Content -->
   <main class="flex-grow">
     <div class="max-w-6xl mx-auto px-6 lg:px-24 py-16">
       <div class="mb-12 text-center">
@@ -144,7 +184,7 @@
         <!-- Project 1 -->
         <article class="project-card">
           <a href="project1.html">
-            <img src="assets\project1.jpg" >
+            <img src="assets/project1.jpg">
             <div class="project-card-content">
               <h3 class="text-lg font-semibold mb-2">Discover Your New Style</h3>
               <p class="text-gray-300 text-sm">Shop the season's hottest styles with just a tap. Find clothes, beauty, and perfumes tailored to your taste.</p>
@@ -155,14 +195,10 @@
         <!-- Project 2 -->
         <article class="project-card">
           <a href="project2.html">
-            <img src="assets\project2.png" >
+            <img src="assets/project2.png">
             <div class="project-card-content">
-              <h3 class="text-lg font-semibold mb-2">Order. Track. Enjoy. Your Food, Your Way.
-
-</h3>
-              <p class="text-gray-300 text-sm">Order your favorite meals in seconds. Login with Firebase, manage your orders, and delete what you don’t want — all in one sleek app. 
-
-</p>
+              <h3 class="text-lg font-semibold mb-2">Order. Track. Enjoy. Your Food, Your Way.</h3>
+              <p class="text-gray-300 text-sm">Order your favorite meals in seconds. Login with Firebase, manage your orders, and delete what you don’t want — all in one sleek app.</p>
             </div>
           </a>
         </article>
@@ -170,7 +206,7 @@
         <!-- Project 3 -->
         <article class="project-card">
           <a href="project3.html">
-            <img src="assets/project3.png" >
+            <img src="assets/project3.png">
             <div class="project-card-content">
               <h3 class="text-lg font-semibold mb-2">Book. Manage. Glow. In 3 Taps.</h3>
               <p class="text-gray-300 text-sm">Book salon services in seconds. Login with Firebase, manage bookings, and cancel anytime. Built with Flutter — looks real, works like one.</p>
@@ -181,11 +217,10 @@
         <!-- Project 4 -->
         <article class="project-card">
           <a href="project4.html">
-            <img src="assets\project4.jpg" >
+            <img src="assets/project4.jpg">
             <div class="project-card-content">
               <h3 class="text-lg font-semibold mb-2">AntiSleep Glasses</h3>
-              <p class="text-gray-300 text-sm">Monitor. Alert. Prevent. Real-Time Drowsiness Detection for Drivers.
-</p>
+              <p class="text-gray-300 text-sm">Monitor. Alert. Prevent. Real-Time Drowsiness Detection for Drivers.</p>
             </div>
           </a>
         </article>
@@ -193,7 +228,7 @@
         <!-- Project 5 -->
         <article class="project-card">
           <a href="project5.html">
-            <img src="assets/project5.jpg" >
+            <img src="assets/project5.jpg">
             <div class="project-card-content">
               <h3 class="text-lg font-semibold mb-2">Canvas Wander</h3>
               <p class="text-gray-300 text-sm">Swipe through full-screen, story-driven landscapes with ratings and “Read More” — built for immersive gallery browsing.</p>
@@ -212,11 +247,18 @@
     </div>
   </main>
 
-  <!-- Footer (same as portfolio) -->
-  <footer class="px-6 lg:px-24 py-6 border-t border-gray-800 text-sm text-gray-400 flex flex-col sm:flex-row justify-between items-center bg-black">
+  <!-- Footer -->
+  <footer class="px-6 lg:px-24 py-6 border-t border-gray-800 text-sm text-gray-400 flex flex-col sm:flex-row justify-between items-center bg-black gap-2">
     <p>© 2025 <span>Tayyaba</span> All rights reserved.</p>
     <p>Website designed in Figma. Built with HTML, Tailwind CSS & JS.</p>
   </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileNav").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
